@@ -3,8 +3,6 @@ import React, { Component } from "react";
 export class MemeGenerator extends Component {
   constructor() {
     super();
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       topText: "",
       bottomText: "",
@@ -13,14 +11,14 @@ export class MemeGenerator extends Component {
     };
   }
 
-  handleChange(event) {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
     const rand = Math.floor(
       Math.random() * Math.floor(this.state.allMemeImgs.length - 1)
@@ -29,9 +27,9 @@ export class MemeGenerator extends Component {
     this.setState({
       imgSrc: this.state.allMemeImgs[rand].url
     });
-  }
+  };
 
-  async componentWillMount() {
+  componentWillMount = async () => {
     try {
       const response = await fetch("https://api.imgflip.com/get_memes");
       if (!response.ok) throw new Error(response.statusText);
@@ -42,7 +40,7 @@ export class MemeGenerator extends Component {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   render() {
     return (
