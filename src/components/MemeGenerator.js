@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 
 export class MemeGenerator extends Component {
-  constructor() {
-    super();
-    this.state = {
-      topText: "",
-      bottomText: "",
-      imgSrc: "http://i.imgflip.com/1bij.jpg",
-      allMemeImgs: []
-    };
-  }
+  state = {
+    topText: "",
+    bottomText: "",
+    imgSrc: "http://i.imgflip.com/1bij.jpg",
+    allMemeImgs: []
+  };
 
   handleChange = event => {
     const { name, value } = event.target;
