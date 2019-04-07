@@ -3,11 +3,6 @@ import Header from "./components/Header";
 import MemeGenerator from "./components/MemeGenerator";
 
 export class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   render() {
     return (
       <div>
